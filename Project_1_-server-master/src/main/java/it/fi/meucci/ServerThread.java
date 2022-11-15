@@ -52,7 +52,7 @@ public class ServerThread extends Thread
             if(m.listaPersone.size() == 0)
             {
                 Messaggio messaggioN = new Messaggio(MultiServer.listaV);
-                outputToClient.writeBytes("la lista è vuota!"  + '\n');
+                outputToClient.writeBytes("la lista è vuota!" + mapper.writeValueAsString(messaggioN) + '\n');
                 outputToClient.writeBytes("voui aggiungere persone?" + '\n');
             }
             else if (m.equals("RICHIESTA ELENCO PER NAZIONE")) 
